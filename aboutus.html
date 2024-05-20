@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - My E-commerce Website</title>
+    <style>
+            body {
+            font-family: Times New Roman, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("C:/Users/aboni/Downloads/436701221_1267927174194979_4245129390775901667_n.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+        }
+        header {
+            background-color: rgba(255, 239, 213, 0.9); /* Adding transparency */
+            padding: 10px 0;
+            text-align: center;
+        }
+        header img {
+            max-width: 100%;
+            height: auto;
+        }
+        nav {
+            background-color: rgba(255, 218, 185, 0.9); /* Adding transparency */
+            color: #006400;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #006400;
+            text-decoration: none;
+            margin: 0 10px;
+            position: relative;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        nav a:hover {
+            text-decoration: underline;
+            color: #555;
+            background-color: #BDB76B;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #BDB76B;
+            transition: width 0.3s;
+        }
+        nav a:hover::after {
+            width: 0%;
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Adding transparency */
+            border-radius: 5px;
+        }
+        .about-section {
+            padding: 20px;
+            text-align: center;
+        }
+        .about-section h2 {
+            margin-bottom: 20px;
+            color: #BDB76B;
+        }
+        .about-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .video-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .video-container video {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="C:/Users/aboni/Downloads/436175974_749214670631012_5508734307831213250_n.png" alt="E-commerce Logo">
+    </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="products.html">Products</a>
+
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="about-section">
+            <h2>About Us</h2>
+            <p>Welcome to Ethereal Blooms, where beauty meets nature in the most enchanting way possible. We are your premier destination for exquisite floral arrangements, thoughtfully curated bouquets, and botanical creations that capture the essence of ethereal beauty.</p>
+            <p>Ethereal Blooms began as a humble vision to bring the splendor of nature into the lives of our customers. Founded by passionate floral enthusiasts, our journey started with a deep appreciation for the profound impact flowers have on our emotions and surroundings. Guided by a commitment to quality, creativity, and customer satisfaction, we embarked on a mission to spread joy and inspiration through the art of floral design.</p>
+            <p>At Ethereal Blooms, we believe in the transformative power of flowers. Each bloom holds a story, a sentiment, and a unique charm that adds vibrance and elegance to any occasion. We strive to create floral masterpieces that not only captivate the eye but also evoke emotions, stir memories, and create unforgettable moments. With a focus on freshness, sustainability, and innovation, we handcraft every arrangement with meticulous attention to detail, ensuring that each creation is a true reflection of natural beauty and artistic expression.</p>
+        </div>
+        <div class="video-container">
+            <video controls>
+                <source src="C:/Users/aboni/Downloads/Florist Ad.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</body>
+</html>

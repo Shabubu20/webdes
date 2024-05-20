@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - My E-commerce Website</title>
+    <style>
+        /* Basic CSS for styling */
+        body {
+            font-family: Times New Roman, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('C:/Users/aboni/Downloads/436701221_1267927174194979_4245129390775901667_n (1).png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        header {
+            background-color: #FFE4C4;
+            color: #FAEBD7;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        nav {
+            background-color: #FAEBD7;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 10px;
+        }
+        .gallery img {
+            width: 200px; /* Set a fixed width for all images */
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #FFE4C4;
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .cart:hover {
+            background-color: #555;
+        }
+        .cart-icon {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        .cart-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #333;
+            z-index: 999;
+            display: none;
+        }
+        .cart-item {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="C:/Users/aboni/Downloads/436175974_749214670631012_5508734307831213250_n.png" alt="E-commerce Logo" style="height: 50px;">
+    </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="contact.html">Contact us</a>
+        <div class="cart" onclick="showCart()">
+            <span class="cart-icon">&#128722;</span> Cart
+        </div>
+    </nav>
+    <div class="container">
+        <div class="gallery">
+            <img src="C:/Users/aboni/Downloads/image (18).png" alt="Peonies" onclick="showDescription('Peonies', 'Peonies are large, fragrant flowers with layers of delicate petals. They symbolize romance, prosperity, and good fortune, and are a popular choice for weddings and bouquets.', 20.00)">
+
+<img src="C:/Users/aboni/Downloads/image (16).png" alt="Red Roses" onclick="showDescription('Red Roses', 'Known for their beauty and fragrance, roses are one of the most popular flowers worldwide. They come in various colors, each carrying its own symbolic meaning.', 12.00)">
+
+<img src="C:/Users/aboni/Downloads/image (24).png" alt="Bougainvillea" onclick="showDescription('Bougainvillea', 'Bougainvillea is a stunning flowering vine known for its vibrant clusters of papery bracts in shades of pink, red, purple, and white. It symbolizes passion, vitality, and abundance, often seen cascading over walls and trellises in warm climates.', 24.00)">
+
+<img src="C:/Users/aboni/Downloads/image (14).png" alt="Tulips" onclick="showDescription('Tulips', 'These brightly colored flowers are often associated with springtime and are admired for their simple yet elegant appearance.', 13.00)">
+
+<img src="C:/Users/aboni/Downloads/image (20).png" alt="Chrysanthemum" onclick="showDescription('Chrysanthemum', 'Chrysanthemums are bold flowers with layers of colorful petals. They symbolize longevity, joy, and optimism, and are commonly associated with autumn and harvest celebrations.', 22.00)">
+
+<img src="C:/Users/aboni/Downloads/image (13).png" alt="Orchids" onclick="showDescription('Orchids', 'Orchids are exotic and delicate flowers known for their intricate beauty. They symbolize love, luxury, and beauty, and are associated with refinement and elegance.', 15.00)">
+
+<img src="C:/Users/aboni/Downloads/image (15).png" alt="Lilies" onclick="showDescription('Lilies', 'Lilies are graceful flowers with trumpet-shaped blooms and a sweet fragrance. They symbolize purity, innocence, and renewal, and are often used in weddings and religious ceremonies.', 20.00)">
+
+<img src="C:/Users/aboni/Downloads/image (17).png" alt="Hydrangeas" onclick="showDescription('Hydrangeas', 'Hydrangeas are lush, full-bodied flowers that bloom in clusters and come in various colors. They symbolize heartfelt emotions, gratitude, and abundance, and are popular in gardens and floral arrangements.', 24.00)">
+
+<img src="C:/Users/aboni/Downloads/43830116666.png" alt="Sunflower" onclick="showDescription('Sunflower', 'Sunflower - With its large, vibrant yellow petals surrounding a dark center, the sunflower symbolizes adoration, loyalty, and longevity. It is known for its association with happiness and sunshine.', 15.00)">
+
+<img src="C:/Users/aboni/Downloads/image (21).png" alt="Daisies" onclick="showDescription('Daisies', 'Daisies are cheerful flowers with white petals and a yellow center. They symbolize innocence, purity, and new beginnings, and are often used to convey joy and simplicity.', 15.00)">
+
+<img src="C:/Users/aboni/Downloads/image (23).png" alt="Lavender" onclick="showDescription('Lavender', 'Lavender is a fragrant herb with tiny purple flowers on tall spikes. It symbolizes serenity, calmness, and tranquility, and is often used in aromatherapy and relaxation practices.', 30.00)">
+
+<img src="C:\Users\aboni\Downloads\image (22).png" alt="Carnations" onclick="showDescription('Carnations', 'Carnations: Fragrant, colorful flowers symbolizing love and admiration.', 15.00)">
+
+
+            <!-- Add more images here -->
+        </div>
+    </div>
+
+    <!-- Cart Container -->
+    <div class="cart-container" id="cartContainer">
+        <h2>Shopping Cart</h2>
+        <div id="cartItems"></div>
+        <button onclick="closeCart()">OK</button>
+        <button onclick="redirectToCheckout()">Checkout</button>
+    </div>
+
+    <script>
+    // JavaScript functions for cart functionality
+    let cart = [];
+
+    function addToCart(productName, price) {
+        const quantity = 1; // Assuming quantity is always 1 when clicking on an image
+        cart.push({ name: productName, price: price, quantity: quantity });
+        alert(productName + " added to cart!");
+    }
+
+    function showDescription(productName, description, price) {
+        if (confirm(description + "\n\nDo you want to add this item to your cart?")) {
+            addToCart(productName, price);
+        }
+    }
+
+    function showCart() {
+        let cartItems = document.getElementById("cartItems");
+        cartItems.innerHTML = "";
+        let totalPrice = 0;
+        cart.forEach(item => {
+            cartItems.innerHTML += `<div class="cart-item">${item.quantity} x ${item.name} - $${(item.price * item.quantity).toFixed(2)}</div>`;
+            totalPrice += item.price * item.quantity;
+        });
+        if (cart.length === 0) {
+            cartItems.innerHTML = "Your cart is empty.";
+        } else {
+            cartItems.innerHTML += `<div>Total Price: $${totalPrice.toFixed(2)}</div>`;
+        }
+        document.getElementById("cartContainer").style.display = "block";
+    }
+
+    function closeCart() {
+        document.getElementById("cartContainer").style.display = "none";
+    }
+
+    function redirectToCheckout() {
+        // Redirect to the checkout page
+        window.location.href = "info.html"; // Assuming info.html is in the same directory
+    }
+</script>
