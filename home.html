@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My E-commerce Website</title>
+    <style>
+        /* Basic CSS for styling */
+        body {
+            font-family: Times New Roman, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("C:/Users/aboni/Downloads/436701221_1267927174194979_4245129390775901667_n.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #FFA07A;
+        }
+        header {
+            background-color: #FFE4C4; /* Adding transparency */
+            padding: 10px 0;
+            text-align: center;
+        }
+        header img {
+            max-width: 100%;
+            height: auto;
+        }
+        nav {
+            background-color: rgba(255, 218, 185, 0.9); /* Adding transparency */
+            color: #006400;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #006400;
+            text-decoration: none;
+            margin: 0 10px;
+            position: relative;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        nav a:hover {
+            text-decoration: underline;
+            color: #555;
+            background-color: #BDB76B;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #BDB76B;
+            transition: width 0.3s;
+        }
+        nav a:hover::after {
+            width: 0%;
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background-color: rgba(255, 218, 185, 0.9); /* Adding transparency */
+            border-radius: 5px;
+        }
+        .hero-image {
+            width: 100%;
+            height: 430px;
+            background-image: url("C:/Users/aboni/Downloads/sunflower.jpg");
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-text {
+            text-shadow: 2px 2px 4px #BDB76B;
+        }
+        .cta-button {
+            background-color: #BDB76B;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #BDB76B;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 10px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        /* Slideshow styles */
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .slideshow img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="C:\Users\aboni\OneDrive\Pictures\webdes\logoo.png" alt="E-commerce Logo">
+    </header>
+    <nav>
+        <a href="products.html">Products</a>
+	<a href="aboutus.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="container">
+        <!-- Slideshow container -->
+        <div class="slideshow">
+            <img src="C:\Users\aboni\OneDrive\Pictures\webdes\sunflower.jpg" alt="Slideshow Image 1" class="slide" style="opacity: 1;">
+            <img src="C:\Users\aboni\OneDrive\Pictures\webdes\tulip.jpg" class="slide" style="opacity: 0;">
+            <img src="C:\Users\aboni\Downloads\daisyies.jpg" alt="Slideshow Image 3" class="slide" style="opacity: 0;">
+        </div>
+        <div class="hero-image">
+            <div class="hero-text">
+                <h2>Discover Amazing Products</h2>
+                <p>Shop with us for the best deals!</p>
+                <a href="products.html" class="cta-button">Shop Now</a>
+            </div>
+        </div>
+        <h2>Featured Products</h2>
+        <div class="featured-products">
+            <div class="gallery">
+                <img src="C:/Users/aboni/Downloads/image (11).png" alt="Sunflower" onclick="addToCart('Sunflower', 10.00)">
+                <img src="C:/Users/aboni/Downloads/image (10).png" alt="Flower 2" onclick="addToCart('Flower 2', 15.00)">
+                <img src="C:/Users/aboni/Downloads/image (9).png" alt="Flower 3" onclick="addToCart('Flower 3', 12.00)">
+                <img src="C:/Users/aboni/Downloads/image (8).png" alt="Flower 4" onclick="addToCart('Flower 4', 12.00)">
+                <!-- Add more images here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript functions for cart functionality
+        let cart = [];
+
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price, quantity: 1 });
+            alert(productName + " added to cart!");
+        }
+
+        function showCart() {
+            let cartItems = document.getElementById("cartItems");
+            cartItems.innerHTML = "";
+            let totalPrice = 0;
+            cart.forEach(item => {
+                cartItems.innerHTML += `<div class="cart-item">${item.quantity} x ${item.name} - $${(item.price * item.quantity).toFixed(2)}</div>`;
+                totalPrice += item.price * item.quantity;
+            });
+            if (cart.length === 0) {
+                cartItems.innerHTML = "Your cart is empty.";
+            } else {
+                cartItems.innerHTML += `<div>Total Price: $${totalPrice.toFixed(2)}</div>`;
+            }
+            document.getElementById("cartContainer").style.display = "block";
+        }
+
+        function closeCart() {
+            document.getElementById("cartContainer").style.display = "none";
+        }
+
+        function redirectToCheckout() {
+            // Redirect to the checkout page
+            window.location.href = "C:/Users/aboni/Downloads/info.html";
+        }
+
+        // Slideshow functionality
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showNextSlide() {
+            slides[currentIndex].style.opacity = 0;
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].style.opacity = 1;
+        }
+
+        setInterval(showNextSlide, 3000); 
+    </script>
+</body>
+</html>
